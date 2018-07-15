@@ -6,11 +6,16 @@ using Prism;
 using Prism.AppModel;
 using Prism.Navigation;
 using Prism.Services;
+using Prism.Logging;
+
+using DebugLogger = HelloPrismApplication.Services.DebugLogger;
 
 namespace HelloPrismApplication.ViewModels
 {
     public class ViewModelBase : BindableBase, IActiveAware, INavigationAware, IDestructible, IConfirmNavigation, IConfirmNavigationAsync, IApplicationLifecycleAware, IPageLifecycleAware
     {
+        public DebugLogger LOG;
+
         protected IPageDialogService _pageDialogService { get; }
 
         protected IDeviceService _deviceService { get; }
@@ -23,6 +28,8 @@ namespace HelloPrismApplication.ViewModels
             _pageDialogService = pageDialogService;
             _deviceService = deviceService;
             _navigationService = navigationService;
+
+            LOG = new DebugLogger();
         }
 
         public string Title { get; set; }

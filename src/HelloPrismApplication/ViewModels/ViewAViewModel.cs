@@ -10,6 +10,8 @@ using Prism.Services;
 using HelloPrismApplication.Resources;
 using HelloPrismApplication.Models;
 
+using DebugLogger = HelloPrismApplication.Services.DebugLogger;
+
 namespace HelloPrismApplication.ViewModels
 {
     public class ViewAViewModel : ViewModelBase
@@ -49,6 +51,7 @@ namespace HelloPrismApplication.ViewModels
                      TodoItem = parameters.GetValue<TodoItem>(AppResources.TodoItemKey);
                     // NG.. これだと画面表示できない。
                     //_todoItem = parameters.GetValue<TodoItem>(AppResources.TodoItemKey);
+                    base.LOG.Debug("_todoItem.Name = " + _todoItem.Name);
 
                 }
             }

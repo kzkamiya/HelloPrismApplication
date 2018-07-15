@@ -44,6 +44,8 @@ namespace HelloPrismApplication
             LogUnobservedTaskExceptions();
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
+            new DebugLogger().Debug("START TEST");
+
             await NavigationService.NavigateAsync("SplashScreenPage");
         }
 
