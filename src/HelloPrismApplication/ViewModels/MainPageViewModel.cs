@@ -8,16 +8,32 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using HelloPrismApplication.Resources;
+using HelloPrismApplication.Models;
 
 namespace HelloPrismApplication.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        private TodoItem _todoItem;
+        public TodoItem TodoItem { get => _todoItem; set => _todoItem = value; }
+
+        public DelegateCommand NextPage { get; set; }
+
         public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService,
                                  IDeviceService deviceService)
             : base(navigationService, pageDialogService, deviceService)
         {
             Title = AppResources.MainPageTitle;
+            NextPage = new DelegateCommand(NextPageNavigate);
+            _todoItem = new TodoItem();
+        }
+
+        private void NextPageNavigate()
+        {
+            var navigationParameter = new NavigationParameters();
+            navigationParameter.Add(AppResources.TodoItemKey, _todoItem);
+
+            base._navigationService.NavigateAsync(AppResources.ViewAKey,navigationParameter);                
         }
 
         public override void OnNavigatingTo(NavigationParameters parameters)
@@ -44,5 +60,6 @@ namespace HelloPrismApplication.ViewModels
 
             // TODO: Handle any tasks that should be done every time OnNavigatedTo is triggered
         }
+
     }
 }

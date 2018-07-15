@@ -7,10 +7,12 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" 
              Title="{Binding Title}" 
-             x:Class="HelloPrismApplication.Views.MainPage">
+             x:Class="HelloPrismApplication.Views.ViewA">
     <StackLayout>
-        <Label Text="Hello!!" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="ViewA!!" VerticalOptions="Center" HorizontalOptions="Center"/>
         <Button Text="Navigate" Command="{Binding NextPage}"/>
-        <Entry Text="{Binding TodoItem.Name}"/>
+        <Label Text="{Binding TodoItem.Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Label Text="TEST!!" VerticalOptions="Center" HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>

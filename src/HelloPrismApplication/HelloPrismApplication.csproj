@@ -28,4 +28,7 @@
     <Compile Update="Resources\AppResources.Designer.cs" DesignTime="true" AutoGen="true" DependentUpon="AppResources.resx" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
 </Project>

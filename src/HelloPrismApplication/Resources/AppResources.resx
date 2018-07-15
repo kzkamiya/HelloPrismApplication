@@ -20,4 +20,9 @@
         <value>Main Page</value>
         <comment>The title of the Main Page</comment>
     </data>
+      <data name="ViewAPageTitle" xml:space="preserve">
+        <value>ViewA Page</value>
+        <comment>The title of the ViewA Page</comment>
+    </data>
+
 </root>

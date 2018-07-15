@@ -64,6 +64,7 @@ namespace HelloPrismApplication
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<SplashScreenPage>();
+            containerRegistry.RegisterForNavigation<ViewA>();
         }
 
         protected override void OnStart()
